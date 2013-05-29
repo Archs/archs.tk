@@ -77,7 +77,7 @@ Literal Map都是大有帮助的语法糖，所以在面向对象和动态类型
 
     上面这种还好，不过 **jQuery的链式操作** 中噪杂的信息太多了，
     实际上应该还是专注于宿主语言的使用了。这种形式的API好像是越来越多了，
-    [Google API的Go Client](https://code。google。com/p/google-api-go-client/)也多少采用了类似的形式。
+    [Google API的Go Client](https://code.google.com/p/google-api-go-client/)也多少采用了类似的形式。
 
 + Literal Map
     
@@ -151,5 +151,5 @@ DSL主要用来是我们的程序更加的 *灵活* ， 那么这种灵活的关
 
 
 
-[《领域特定语言》]:http://book。douban。com/subject/21964984/
-[Walk]:https://github。com/lxn/walk/blob/master/examples/actions/actions。go
+[《领域特定语言》]:http://book.douban.com/subject/21964984/
+[Walk]:https://github.com/lxn/walk/blob/master/examples/actions/actions.go
