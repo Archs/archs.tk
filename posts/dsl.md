@@ -3,7 +3,7 @@ title: DSL的模式和方法
 date: '2013-05-29'
 description:thoughts about dsl
 categories:
-    - 程序设计
+    - ProgramDesign
 tags:
     - DSL
     - Lisp
