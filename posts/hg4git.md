@@ -3,10 +3,11 @@ title: 使用hg访问git仓库
 date: '2013-04-11'
 description:
 categories:
-    - python
+    - tips
 tags:
     - hg
     - git
+    - python
 ---
 
 hg用久了，觉得git命令很别扭，高级功能很少用到，速度差别基本上

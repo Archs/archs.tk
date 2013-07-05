@@ -3,7 +3,10 @@ title: 在TinyCore中取代BusyBox
 date: '2013-04-18'
 description:
 categories:
+    - tips
+tags:
     - TinyCore
+    - Linux
 ---
 
 TinyCore为了最小化体积，使用BusyBox构建基本的Shell环境，所以不是
