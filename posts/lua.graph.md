@@ -14,7 +14,8 @@ tags:
 
 作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。
 
-这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序。
+这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:
+[下载链接](/assets/media/graph.exe)
 
 	setmetatable(_G, { __index = math })
 	e = exp(1)
