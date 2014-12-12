@@ -3,7 +3,7 @@ tagline: Blog Tagline
 author :
   name : Sun
   email : sun@archs.tk
-  github : sungit
+  github : none
   twitter : username
   feedburner : feedname
 
@@ -13,4 +13,4 @@ navigation :
   - categories.html
   - pages.html
   - about.md
-  
+
