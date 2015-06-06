@@ -44,7 +44,6 @@ docutils是一个伟大的工具，但是有些 *繁琐* 。细节的使用上
     }
 
     // int PyErr_CheckSignals()
-    // This function interacts with Python’s signal handling. It checks whether a signal has been sent to the processes and if so, invokes the corresponding signal handler. If the signal module is supported, this can invoke a signal handler written in Python. In all cases, the default effect for SIGINT is to raise the KeyboardInterrupt exception. If an exception is raised the error indicator is set and the function returns -1; otherwise the function returns 0. The error indicator may or may not be cleared if it was previously set.
     func PyErr_CheckSignals() bool {
         return int2bool(C.PyErr_CheckSignals())
     }
