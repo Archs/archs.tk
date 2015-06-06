@@ -3,6 +3,10 @@ languageCode = "en-us"
 title = "Archs"
 disqusShortname = "archs"
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
 [params]
   highlight = "monokai"
   author = "Archs Sun"
