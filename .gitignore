@@ -1,2 +1,3 @@
-compiled/*
+compiled/
+public/
 .tmp_partials/*
