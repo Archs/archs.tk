@@ -6,7 +6,7 @@ disqusShortname = "archs"
 [author]
     name = "Archs"
     email = "archs@archs.tk"
-    github = "http://github.com/Archs"
+    github = "Archs"
 
 [taxonomies]
   category = "categories"
