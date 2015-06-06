@@ -161,10 +161,6 @@ body {
 	text-decoration: underline;
 }
 
-.post h1 {
-	font-size:28px;
-}
-
 .post h2 {
 	font-size:25px;
 }
@@ -195,14 +191,22 @@ body {
 	font-size:39px;
 	line-height: 40px;
 	margin-top: 0;
-	margin-bottom: 0;
+	margin-bottom: 0.3em;
 }
 
 div#toc {
-	float:right;
-/* 	position: absolute; */
-/* 	right: 0; */
-	border-style: outset;
+	/*margin-left: 1em;*/
+	margin-top: 3em;
+	/* width:300px; */
+	/* height: 300px; */
+}
+
+#TableOfContents > ul {
+	padding-left:1.5em;
+}
+
+#TableOfContents > ul > li {
+    list-style-type: square;
 }
 
 @media screen and (max-width:767px){

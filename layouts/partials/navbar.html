@@ -32,13 +32,13 @@
  --> 
     <!-- <div class="pure-u-11-12 pure-u-md-5-8"> -->
 
-        <div class="ui borderless menu">
+        <div class="ui secondary borderless menu">
             {{ $baseurl := .Site.BaseUrl }}
             <a class="item" href="{{ $baseurl }}">
               <i class="home icon"></i>
               {{.Site.Title}}
             </a>
-            <div class="ui right menu">
+            <div class="ui borderless right  menu">
               {{ range $name,$page := .Site.Taxonomies.categories }}
                 <a class="item" href="{{ $baseurl }}categories/{{ $name | urlize }}">
                   {{ $name | title }}
