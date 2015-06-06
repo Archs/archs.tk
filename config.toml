@@ -1,6 +1,7 @@
 baseurl = "http://archs.github.io/"
 languageCode = "en-us"
 title = "Archs"
+disqusShortname = "archs"
 
 [params]
   highlight = "monokai"
