@@ -3,6 +3,11 @@ languageCode = "en-us"
 title = "Archs"
 disqusShortname = "archs"
 
+[author]
+    name = "Archs"
+    email = "archs@archs.tk"
+    github = "http://github.com/Archs"
+
 [taxonomies]
   category = "categories"
   tag = "tags"
