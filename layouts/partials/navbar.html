@@ -34,17 +34,21 @@
 
         <div class="ui secondary borderless menu">
             {{ $baseurl := .Site.BaseUrl }}
-            <a class="item" href="{{ $baseurl }}">
-              <i class="home icon"></i>
+            <a class="item big" href="{{ $baseurl }}">
+              <i class="home big red icon"></i>
               {{.Site.Title}}
             </a>
             <div class="ui borderless right  menu">
               {{ range $name,$page := .Site.Taxonomies.categories }}
                 <a class="item" href="{{ $baseurl }}categories/{{ $name | urlize }}">
+                  <i class="folder icon"></i>
                   {{ $name | title }}
                 </a>
               {{ end }}
-              <a class="item" href="{{ $baseurl }}about">About</a>
+              <a class="item" href="{{ $baseurl }}about">
+                 <i class="user icon"></i>
+                About
+              </a>
               <a class="item" href="{{ .RSSlink }}">
                 <i class="rss square yellow large icon"></i>RSS
               </a>
