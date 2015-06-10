@@ -4,14 +4,11 @@
     <div class="three wide column"></div>
 	<div class="ten wide column">
 	  {{ partial "navbar.html" . }}
-	  <p class="posts-name">Recent posts:</p>
-
 	  <ul class="posts">
 		{{ $baseurl := .Site.BaseURL }}
-		{{ range $name, $page := .Site.Pages }}
-		{{ if eq .Type "post" }}
+		{{ range $idx, $page := (first 5 (where .Site.Pages "Type" "post")) }}
 		<li>
-		  <a href="{{ .Permalink }}">{{ $page.Title }}</a>
+		  <a class="ui large header" href="{{ .Permalink }}">{{ .Title }}</a>
 
 		  <p class="footnote">
 			submitted <time datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}" class="post-list timeago">{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}</time>
@@ -31,10 +28,11 @@
 			{{ with $page.Params.series }}
 			series:[ {{ range $page.Params.series }}<a href="{{ $baseurl }}series/{{ . | urlize }}">{{ . }}</a> {{ end }}]
 			{{ end }}
-
 		  </p>
+			<div>
+				{{ $page.Summary }} <a href="{{ $page.Permalink }}"> Read more → </a>
+			</div>
 		</li>
-		{{ end }}
 		{{ end }}
 	  </ul>
 	</div>
