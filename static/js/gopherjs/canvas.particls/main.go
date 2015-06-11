@@ -119,21 +119,17 @@ func makeParticles(x, y float64, n int) {
 func main() {
 	dom.OnDOMContentLoaded(func() {
 		s := dom.GetElementById("gopherjs")
-		// set full window and black background
-		s.Style.SetProperty("margin", "0")
-		s.Style.SetProperty("background", "#222")
+		style := dom.GetComputedStyle(s)
 
 		el := canvas.New(dom.CreateElement("canvas").Object)
-
-		cw, _ = strconv.ParseFloat(s.Style.GetPropertyValue("width"), 64)
-		ch, _ = strconv.ParseFloat(s.Style.GetPropertyValue("height"), 64)
-		println(cw, ch)
+		cw, _ = strconv.ParseFloat(style.GetPropertyValue("width")[:3], 64)
+		ch, _ = strconv.ParseFloat(style.GetPropertyValue("height")[:3], 64)
 		el.Width = int(cw)
 		el.Height = int(ch)
 		el.AddEventListener(dom.EvtMousemove, func(e *dom.Event) {
 			e.PreventDefault()
-			x := float64(e.ClientX)
-			y := float64(e.ClientY)
+			x := float64(e.LayerX)
+			y := float64(e.LayerY)
 			makeParticles(x, y, 5)
 		})
 		ctx = el.GetContext2D()
