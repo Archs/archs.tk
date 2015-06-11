@@ -6,7 +6,7 @@
 	    <h5 class="ui header">Recent Posts:</h5>
 	    <ul class="posts">
 		  	{{ $baseurl := .Site.BaseURL }}
-		  	{{ range (first 5 (where .Site.Pages "Type" "post")) }}
+		  	{{ range (first 5 .Site.Pages) }}
 		  	<li>
 		  		{{ .Render "title"}}
 		  		{{ .Render "summary"}}
