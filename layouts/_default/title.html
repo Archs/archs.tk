@@ -1,8 +1,7 @@
-<h1 class="ui header">
-	<a href="{{ .Permalink }}">{{ .Title }}</a>
-</h1>	
 <footer class="footnote">
 	<time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" class="post-list timeago">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</time>
-
 	{{.Render "taglist"}}
 </footer>
+<h1 class="ui header">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+</h1>   
