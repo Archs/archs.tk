@@ -7,7 +7,9 @@
 		{{ $baseurl := .Site.BaseURL }}
 		{{ range (first 5 (where .Site.Pages "Type" "post")) }}
 		<li>
-		  <a class="ui large header" href="{{ .Permalink }}">{{ .Title }}</a>
+		  <h1 class="ui header">
+			  <a href="{{ .Permalink }}">{{ .Title }}</a>
+		  </h1>	
 
 		  <p class="footnote">
 			submitted <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" class="post-list timeago">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</time>
