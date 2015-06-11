@@ -1,0 +1,29 @@
+{{ $baseURL := .Site.BaseURL}}
+
+{{ if or .Params.tags .Params.categories .Params.series }}
+	to
+{{ end }}
+
+{{ with .Params.tags }}
+	tags:[ 
+		{{ range .}}
+			<a href="{{ $baseURL }}tags/{{ . | urlize }}">{{ . }}</a> 
+		{{ end }}
+	]
+{{ end }}
+
+{{ with .Params.categories }}
+	categories:[ 
+			{{ range . }}
+				<a href="{{ $baseURL }}categories/{{ . | urlize }}">{{ . }}</a> 
+			{{ end }}
+		]
+{{ end }}
+
+{{ with .Params.series }}
+	series:[ 
+			{{ range . }}
+				<a href="{{ $baseURL }}series/{{ . | urlize }}">{{ . }}</a> 
+			{{ end }}
+		]
+{{ end }}
