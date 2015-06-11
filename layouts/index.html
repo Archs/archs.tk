@@ -40,9 +40,7 @@
 				]
 			{{ end }}
 		  </p>
-			<div>
-				{{ .Summary }} <a href="{{ .Permalink }}"> Read more → </a>
-			</div>
+			{{ .Render "summary" }}
 		</li>
 		{{ end }}
 	  </ul>
