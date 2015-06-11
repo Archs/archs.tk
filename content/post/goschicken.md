@@ -13,7 +13,7 @@ tags:
 
 使用cgo加载c库的主要麻烦在于cgo不识别c头文件中的宏
 而chicken scheme初始化的时候要调用一个全局函数CHICKEN_default_toplevel。
-在cgo中使用 `void* dfp = CHICKEN_default_toplevel;` 可以直接声明。
+在cgo中使用 `void* dfp = CHICKEN_default_toplevel;` 可以直接声明。<!--more-->
 
     package main
 

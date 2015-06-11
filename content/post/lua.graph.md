@@ -7,11 +7,11 @@ tags:
   - "script"
 ---
 
-在网上看到一篇文章 [用Lua画二元方程](http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html)，很有意思。 <!--more-->
+在网上看到一篇文章 [用Lua画二元方程](http://www.cnblogs.com/rufi/archive/2011/06/28/GraphPlot.html)，很有意思。 
 
 作者提供了源代码，很是佩服Lua的个功能强大和作者的奇思妙想。
 
-这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:
+这里仅提供完整的代码封装一份,不依赖外部DLL，成为一个独立的Win32应用程序:<!--more-->
 [下载链接](/assets/media/graph.exe)
 
 	setmetatable(_G, { __index = math })

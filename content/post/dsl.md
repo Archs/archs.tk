@@ -10,7 +10,7 @@ tags:
     - Go
 ---
 
-最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。<!--more-->
+最近研究Lisp，对Domain Specific Language很是产生了一些兴趣。
 
 James Gosling曾经说过： `每个配置文件最终都会变成一门编程语言。` 这大概是
 DSL之所以兴起和引人关注的一点吧。另外Martin Fowler在[《领域特定语言》][]中
@@ -21,6 +21,8 @@ DSL之所以兴起和引人关注的一点吧。另外Martin Fowler在[《领域
 可以认为是领域专家（UI设计师）沟通的延伸，但是达成的效果是实实在在的。
 上面举到的两个例子跟XML的关系是非同一般的紧密，同时也说了XML作为DSL载体
 的优势。
+
+<!--more-->
 
 内部和外部DSL
 ===================
