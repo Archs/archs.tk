@@ -11,6 +11,8 @@ date = "2015-06-11T16:51:59+08:00"
 
 使用 *Gopherjs* 模拟的简单粒子系统，例子的来源是 [sketch.js](http://soulwire.github.io/sketch.js/examples/particles.html).  
 
+<!--more-->
+
 在不熟悉Javascript的情况下使用Gopherjs写HTML5应用，还是很有爽的！大部分的Golang绝大部分
 基本库（除了os和syscall的部分功能）在Gopherjs中是直接可用的，见[兼容性列表](https://github.com/gopherjs/gopherjs/blob/master/doc/packages.md)。
 
@@ -28,7 +30,6 @@ date = "2015-06-11T16:51:59+08:00"
     
     如果对js文件的大小没什么严苛的需求，做做Demo和演示，在Web中使用 *Gopherjs* 
 
-<!--more-->
 
 ```Go
 package main
