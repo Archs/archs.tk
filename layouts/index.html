@@ -5,31 +5,43 @@
 	  {{ partial "navbar.html" . }}
 	  <ul class="posts">
 		{{ $baseurl := .Site.BaseURL }}
-		{{ range $idx, $page := (first 5 (where .Site.Pages "Type" "post")) }}
+		{{ range (first 5 (where .Site.Pages "Type" "post")) }}
 		<li>
 		  <a class="ui large header" href="{{ .Permalink }}">{{ .Title }}</a>
 
 		  <p class="footnote">
-			submitted <time datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}" class="post-list timeago">{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}</time>
+			submitted <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" class="post-list timeago">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</time>
 
-			{{ if or $page.Params.tags $page.Params.categories $page.Params.series }}
+			{{ if or .Params.tags .Params.categories .Params.series }}
 			to
 			{{ end }}
 
-			{{ with $page.Params.tags }}
-			tags:[ {{ range $page.Params.tags}}<a href="{{ $baseurl }}tags/{{ . | urlize }}">{{ . }}</a> {{ end }}]
+			{{ with .Params.tags }}
+				tags:[ 
+					{{ range .}}
+						<a href="{{ $baseurl }}tags/{{ . | urlize }}">{{ . }}</a> 
+					{{ end }}
+				]
 			{{ end }}
 
-			{{ with $page.Params.categories }}
-			categories:[ {{ range $page.Params.categories }}<a href="{{ $baseurl }}categories/{{ . | urlize }}">{{ . }}</a> {{ end }}]
+			{{ with .Params.categories }}
+			categories:[ 
+					{{ range . }}
+						<a href="{{ $baseurl }}categories/{{ . | urlize }}">{{ . }}</a> 
+					{{ end }}
+				]
 			{{ end }}
 
-			{{ with $page.Params.series }}
-			series:[ {{ range $page.Params.series }}<a href="{{ $baseurl }}series/{{ . | urlize }}">{{ . }}</a> {{ end }}]
+			{{ with .Params.series }}
+			series:[ 
+					{{ range . }}
+						<a href="{{ $baseurl }}series/{{ . | urlize }}">{{ . }}</a> 
+					{{ end }}
+				]
 			{{ end }}
 		  </p>
 			<div>
-				{{ $page.Summary }} <a href="{{ $page.Permalink }}"> Read more → </a>
+				{{ .Summary }} <a href="{{ .Permalink }}"> Read more → </a>
 			</div>
 		</li>
 		{{ end }}
