@@ -1,51 +1,18 @@
 {{ partial "header.html" . }}
 
 <div class="ui centered grid">
-	<div class="twelve wide column">
-	  {{ partial "navbar.html" . }}
-	  <ul class="posts">
-		{{ $baseurl := .Site.BaseURL }}
-		{{ range (first 5 (where .Site.Pages "Type" "post")) }}
-		<li>
-		  <h1 class="ui header">
-			  <a href="{{ .Permalink }}">{{ .Title }}</a>
-		  </h1>	
-
-		  <p class="footnote">
-			submitted <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" class="post-list timeago">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</time>
-
-			{{ if or .Params.tags .Params.categories .Params.series }}
-			to
-			{{ end }}
-
-			{{ with .Params.tags }}
-				tags:[ 
-					{{ range .}}
-						<a href="{{ $baseurl }}tags/{{ . | urlize }}">{{ . }}</a> 
-					{{ end }}
-				]
-			{{ end }}
-
-			{{ with .Params.categories }}
-			categories:[ 
-					{{ range . }}
-						<a href="{{ $baseurl }}categories/{{ . | urlize }}">{{ . }}</a> 
-					{{ end }}
-				]
-			{{ end }}
-
-			{{ with .Params.series }}
-			series:[ 
-					{{ range . }}
-						<a href="{{ $baseurl }}series/{{ . | urlize }}">{{ . }}</a> 
-					{{ end }}
-				]
-			{{ end }}
-		  </p>
-			{{ .Render "summary" }}
-		</li>
-		{{ end }}
-	  </ul>
+	<div class="twelve wide column ui segment">
+	    {{ partial "navbar.html" . }}
+	    <h5 class="ui header">Recent Posts:</h5>
+	    <ul class="posts">
+		  	{{ $baseurl := .Site.BaseURL }}
+		  	{{ range (first 5 (where .Site.Pages "Type" "post")) }}
+		  	<li>
+		  		{{ .Render "title"}}
+		  		{{ .Render "summary"}}
+		  	</li>
+		  	{{ end }}
+	    </ul>
 	</div>
 </div>
 
