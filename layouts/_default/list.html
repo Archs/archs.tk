@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 <div class="ui centered grid">
-	<div class="twelve wide column">
+	<div class="twelve wide column ui segment">
 	  {{ partial "navbar.html" . }}
 	  <p class="posts-name">{{ .Title }}:</p>
 
@@ -9,29 +9,7 @@
 		{{ $baseurl := .Site.BaseUrl }}
 		{{ range $name, $page := .Data.Pages }}
 		<li>
-		  <h1 class="ui huge header" >
-			  <a href="{{ .Permalink }}">{{ $page.Title }}</a>
-		  </h1>	
-
-		  <p class="footnote">
-			submitted <time datetime="{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}" class="post-list timeago">{{ $page.Date.Format "2006-01-02T15:04:05Z07:00" }}</time>
-
-			{{ if or $page.Params.tags $page.Params.categories $page.Params.series }}
-			to
-			{{ end }}
-
-			{{ with $page.Params.tags }}
-			tags:[ {{ range $page.Params.tags}}<a href="{{ $baseurl }}tags/{{ . | urlize }}">{{ . }}</a> {{ end }}]
-			{{ end }}
-
-			{{ with $page.Params.categories }}
-			categories:[ {{ range $page.Params.categories }}<a href="{{ $baseurl }}categories/{{ . | urlize }}">{{ . }}</a> {{ end }}]
-			{{ end }}
-
-			{{ with $page.Params.series }}
-			series:[ {{ range $page.Params.series }}<a href="{{ $baseurl }}series/{{ . | urlize }}">{{ . }}</a> {{ end }}]
-			{{ end }}
-		  </p>
+		  {{.Render "title"}}
 		  {{.Render "summary"}}
 		</li>
 		{{ end }}
