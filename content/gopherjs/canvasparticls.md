@@ -1,7 +1,7 @@
 +++
 Categories = ["Development", "GoLang"]
 Description = ""
-Draft = true
+Draft = false
 JsFolder = "canvas.particls"
 Tags = ["Gopherjs", "golang"]
 Title = "Canvas Particles Using Gopherjs"
