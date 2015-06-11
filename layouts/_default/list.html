@@ -1,8 +1,7 @@
 {{ partial "header.html" . }}
 
-<div class="ui grid">
-    <div class="three wide column"></div>
-	<div class="ten wide column">
+<div class="ui centered grid">
+	<div class="twelve wide column">
 	  {{ partial "navbar.html" . }}
 	  <p class="posts-name">{{ .Title }}:</p>
 
@@ -30,13 +29,12 @@
 			{{ with $page.Params.series }}
 			series:[ {{ range $page.Params.series }}<a href="{{ $baseurl }}series/{{ . | urlize }}">{{ . }}</a> {{ end }}]
 			{{ end }}
-
 		  </p>
+		  {{.Render "summary"}}
 		</li>
 		{{ end }}
 	  </ul>
 	</div>
-    <div class="three wide column"></div>
 </div>
 
 {{ partial "footer.html" . }}

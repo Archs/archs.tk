@@ -1,11 +1,16 @@
 {{ partial "header.html" . }}
 
-<div class="ui grid basic segment">
-    <div class="three wide column"></div>
-    <div class="ten wide column">
+<div class="ui centered grid">
+    <div class="twelve wide column">
       {{ partial "navbar.html" . }}
         <div class="post">
             <div class="post-title">
+                {{ if .TableOfContents }}
+                    <div id="toc" class="ui basic right floated segment">
+                        <h4 class="ui header">Contents</h4>
+                        {{ .TableOfContents }}
+                    </div>
+                {{ end }}
                 <p class="footnote">
                     <time class="">{{ .Date.Format "2006-01-02" }}</time>
 		            {{ $baseurl := .Site.BaseUrl }}
@@ -25,22 +30,14 @@
                     {{ end }}
                 </p>
                 <h1>{{ .Title }}</h1>
+                {{ .Content }}
             </div>
 
             <div class="post-content">
-                {{ .Content }}
                 {{ template "_internal/disqus.html" . }}
             </div>
         </div>
 	</div>
-    <div class="three wide column">
-        {{ if .TableOfContents }}
-            <div id="toc" class="ui basic segment fixed">
-                <h4 class="ui header">Contents</h4>
-                {{ .TableOfContents }}
-            </div>
-        {{ end }}
-    </div>
 </div>
 
 {{ partial "footer.html" . }}
