@@ -3,10 +3,10 @@
 
 <div class="ui secondary borderless menu">
     <a class="header item" href="{{ $baseurl }}">
-      <i class="home big red icon"></i>
-      {{.Site.Title}}
+      <!-- <i class="home huge icon"></i> -->
+      <h1>{{.Site.Title}}</h1>
     </a>
-    <div class="ui  right  menu">
+    <div class="ui  right text  menu">
       {{ range $key, $val := .Site.Sections }}
         {{if $key}}
           <a class="item" href="{{ $baseurl }}{{ $key| urlize }}">
@@ -20,7 +20,9 @@
         About
       </a>
       <a class="item" href="{{ .RSSlink }}">
-        <i class="rss square yellow large icon"></i>RSS
+        <i class="rss square red big icon"></i>
       </a>
     </div>
 </div>
+
+<div class="ui divider"></div>
