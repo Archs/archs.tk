@@ -1,17 +1,19 @@
 
-{{ $baseurl := .Site.BaseUrl }}
+{{ $baseurl := .Site.BaseURL }}
 
-<div class="ui secondary  menu">
+<div class="ui secondary borderless menu">
     <a class="header item" href="{{ $baseurl }}">
       <i class="home big red icon"></i>
       {{.Site.Title}}
     </a>
     <div class="ui  right  menu">
-      {{ range $name,$page := .Site.Taxonomies.categories }}
-        <a class="item" href="{{ $baseurl }}categories/{{ $name | urlize }}">
-          <i class="folder icon"></i>
-          {{ $name | title }}
-        </a>
+      {{ range $key, $val := .Site.Sections }}
+        {{if $key}}
+          <a class="item" href="{{ $baseurl }}{{ $key| urlize }}">
+            <i class="folder icon"></i>
+            {{ $key | title}}
+          </a>
+        {{end}}
       {{ end }}
       <a class="item" href="{{ $baseurl }}about">
          <i class="user icon"></i>
